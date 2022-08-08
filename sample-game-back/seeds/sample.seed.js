@@ -6,11 +6,21 @@ const { default: mongoose } = require("mongoose");
 
 const samples = [
   {
-    title: "Cola Bottle Baby",
-    artiste: "Edwin Birdsong",
-    genre: ["Soul / Funk / Disco"],
-    timecode: "sample appears at 0:00 and 4:51",
-    url: "https://www.youtube.com/embed/fiD39jo5Yo4",
+    sample: {
+      title: "Cola Bottle Baby",
+      artiste: "Edwin Birdsong",
+      genre: ["Soul", "Funk", "Disco"],
+      timecode: "sample appears at 0:00 and 4:51",
+      url: "https://www.youtube.com/embed/fiD39jo5Yo4",
+    },
+    music: {
+      title: "Harder, Better, Faster, Stronger",
+      artist: "Daft Punk",
+      genre: ["Electronic", "Dance"],
+      url: "https://www.youtube.com/embed/gAjR4_CbPpQ",
+      timecode: "sample appears at 0:05 and 0:20 (and throughout)",
+    },
+    hasBeenPlayed: false,
   },
 ];
 
