@@ -1,9 +1,9 @@
 const Sample = require("../models/Sample.model");
-const openConnection = require("../db/index");
+// const samples = require("./data-sample.seed")
 const { default: mongoose } = require("mongoose");
+require("../db")
 
 // Seed the database with the sample
-
 const samples = [
   {
     sample: {
@@ -518,11 +518,8 @@ const samples = [
 ];
 
 async function seedSamples() {
-  await openConnection();
-  const createdSamples = await Sample.findOneAndUpdate(samples, {
-    upsert: true,
-    new: true,
-  });
+  console.log(samples.length)
+  const createdSamples = await Sample.create(samples)
   console.log(`Created ${createdSamples.length} samples: ${createdSamples}`);
   await mongoose.connection.close();
   console.log("Connection closed");
