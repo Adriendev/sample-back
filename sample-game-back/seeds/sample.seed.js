@@ -1,7 +1,7 @@
 const Sample = require("../models/Sample.model");
 // const samples = require("./data-sample.seed")
 const { default: mongoose } = require("mongoose");
-require("../db");
+require("../db/index")
 
 // Seed the database with the sample
 const samples = [
@@ -519,7 +519,7 @@ const samples = [
 
 async function seedSamples() {
   console.log(samples.length);
-  const createdSamples = await Sample.findOneAndUpdate(samples, {
+  const createdSamples = await Sample.create(samples, {
     upsert: true,
     new: true,
   });
