@@ -15,7 +15,7 @@ const sampleSchema = new Schema({
     timecode: String,
     url: String,
   },
-  hasBeenPLayed: Boolean,
+  hasBeenPlayed: Boolean,
 });
 
 const Sample = model("Sample", sampleSchema);
